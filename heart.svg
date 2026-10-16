@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="420" height="360" viewBox="0 0 420 360" fill="none">
+  <defs>
+    <path id="heart" d="M210 104C190 70 163 57 135 62C92 69 71 103 76 143C83 207 160 268 202 299C207 303 213 303 218 299C260 268 337 207 344 143C349 103 328 69 285 62C257 57 230 70 210 104Z"/>
+    <radialGradient id="body" cx="0" cy="0" r="1" gradientTransform="translate(144 99) rotate(55) scale(245 260)" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#fff0ef"/>
+      <stop offset=".28" stop-color="#f8c5d5"/>
+      <stop offset=".58" stop-color="#e5a0bf"/>
+      <stop offset=".84" stop-color="#c976a1"/>
+      <stop offset="1" stop-color="#a85888"/>
+    </radialGradient>
+    <radialGradient id="reflection" cx="0" cy="0" r="1" gradientTransform="translate(291 117) rotate(100) scale(115 72)" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#ffe2e7" stop-opacity=".85"/>
+      <stop offset="1" stop-color="#ffe2e7" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="edge" cx="0" cy="0" r="1" gradientTransform="translate(209 155) rotate(90) scale(172 156)" gradientUnits="userSpaceOnUse">
+      <stop offset=".55" stop-color="#9a4977" stop-opacity="0"/>
+      <stop offset="1" stop-color="#9a4977" stop-opacity=".38"/>
+    </radialGradient>
+    <linearGradient id="rim" x1="100" y1="75" x2="294" y2="270" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#fff6f4" stop-opacity=".8"/>
+      <stop offset=".5" stop-color="#fff6f4" stop-opacity=".1"/>
+      <stop offset="1" stop-color="#b36b94" stop-opacity=".4"/>
+    </linearGradient>
+    <clipPath id="silhouette"><use href="#heart"/></clipPath>
+    <filter id="blur" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="9"/>
+    </filter>
+    <filter id="ground" x="-50%" y="-200%" width="200%" height="500%">
+      <feGaussianBlur stdDeviation="10"/>
+    </filter>
+  </defs>
+  <ellipse cx="216" cy="323" rx="83" ry="8" fill="#794d86" opacity=".22" filter="url(#ground)"/>
+  <g transform="rotate(-8 210 180)">
+    <use href="#heart" fill="url(#body)"/>
+    <g clip-path="url(#silhouette)">
+      <path d="M66 53H354V307H66Z" fill="url(#reflection)"/>
+      <path d="M66 53H354V307H66Z" fill="url(#edge)"/>
+      <path d="M96 140C92 101 118 76 148 80C164 82 177 91 187 104" stroke="#fff8f2" stroke-opacity=".75" stroke-width="12" stroke-linecap="round" filter="url(#blur)"/>
+      <path d="M241 91C263 70 297 77 314 98" stroke="#fff0f3" stroke-opacity=".45" stroke-width="9" stroke-linecap="round" filter="url(#blur)"/>
+      <path d="M306 173C292 211 249 255 220 278" stroke="#8f416f" stroke-opacity=".2" stroke-width="18" stroke-linecap="round" filter="url(#blur)"/>
+    </g>
+    <use href="#heart" stroke="url(#rim)" stroke-width="1.5"/>
+  </g>
+</svg>

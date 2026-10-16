@@ -1,0 +1,9 @@
+{
+  "name": "five-words",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --test",
+    "check": "node --check app.js && node --check retro.js"
+  }
+}
