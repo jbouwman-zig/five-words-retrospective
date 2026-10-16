@@ -208,7 +208,6 @@ async function initialize() {
     fitWord();
   } else {
     submission = load(ENTRY_KEY, validateSubmission);
-    const placeholders = ['busy', 'focused', 'progress', 'blocked', 'teamwork'];
     for (let index = 0; index < WORD_COUNT; index++) {
       const label = document.createElement('label');
       label.textContent = `Word ${String(index + 1).padStart(2, '0')}`;
@@ -216,7 +215,6 @@ async function initialize() {
       input.name = `word-${index}`;
       input.required = true;
       input.maxLength = MAX_WORD_LENGTH;
-      input.placeholder = placeholders[index];
       input.autocomplete = 'off';
       input.autocapitalize = 'none';
       input.spellcheck = false;
