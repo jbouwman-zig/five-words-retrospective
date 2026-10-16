@@ -4,41 +4,40 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#edb9d1">
-  <meta name="description" content="Five words. One sprint. A retrospective with a little distortion.">
+  <meta name="description" content="Describe your sprint in five words and discuss them with your team.">
   <title>Five Words — Sprint retrospective</title>
   <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
   <header class="masthead">
-    <a class="wordmark" href="./">Five Words<span aria-hidden="true">®</span></a>
+    <a class="wordmark" href="./">Five Words</a>
     <nav aria-label="Main navigation">
       <a href="./" id="participant-link">Take part</a>
-      <a href="./?view=host" id="host-link">Host a retro ↗</a>
     </nav>
   </header>
   <main>
     <p id="error" class="error" role="alert" hidden></p>
     <section id="participant-view" class="page" hidden>
-      <div class="eyebrow"><span>01 / Transmission</span><span>One sprint. No filter.</span></div>
+      <div class="eyebrow"><span>01 / Your words</span></div>
       <div class="entry-layout">
         <div class="intro">
           <h1>Your sprint.<br>Five <em>words.</em></h1>
-          <p class="lead">The good, the bad, the beautifully strange. Describe your sprint in five words. Later, the team guesses who wrote what.</p>
-          <div class="signal-art" aria-hidden="true"><img class="heart" src="./heart.svg" alt="" width="420" height="360"><span>Feel it / Name it / Send it</span></div>
+          <p class="lead">Describe your sprint in five words. During the retro, the team guesses who wrote each word and discusses why.</p>
+          <div class="signal-art" aria-hidden="true"><img class="heart" src="./heart.svg" alt="" width="420" height="360"></div>
         </div>
         <div class="form-panel">
           <div id="entry">
-            <p class="section-label">Make some noise</p>
+            <p class="section-label">Your words</p>
             <form id="word-form">
-              <label>Your name<input name="name" maxlength="32" required autocomplete="name" placeholder="Who’s transmitting?"></label>
+              <label>Your name<input name="name" maxlength="32" required autocomplete="name" placeholder="e.g. Alex"></label>
               <div id="word-fields" class="word-fields"></div>
               <button type="submit" class="button primary">Generate my code ↗</button>
             </form>
-            <p class="smallprint">No sign-up. No server. Your words stay in this browser until you share your code.</p>
+            <p class="smallprint">Your words are saved in this browser. Share your code privately with the host to submit them.</p>
           </div>
           <div id="submission" hidden>
-            <p class="section-label">Transmission ready</p>
-            <h2>Words secured.<br>Now pass them on.</h2>
+            <p class="section-label">Your submission</p>
+            <h2>Send your code to the host</h2>
             <p>Send this code <strong>privately to your host</strong>. They need to import it before the reveal. This page does not send it automatically.</p>
             <ol id="submitted-words" class="submitted-words"></ol>
             <label>Your submission code<textarea id="submission-code" readonly rows="4" spellcheck="false"></textarea></label>
@@ -55,23 +54,23 @@
 
     <section id="host-view" class="page" hidden>
       <div id="lobby">
-        <div class="eyebrow"><span>02 / Collect the noise</span><span>Host desk</span></div>
+        <div class="eyebrow"><span>02 / Collect submissions</span><span>Host</span></div>
         <div class="host-layout">
           <div>
-            <h1>Same sprint.<br>Different <em>heads.</em></h1>
+            <h1>Collect the<br>team’s <em>words.</em></h1>
             <p class="lead">Ask everyone to open this address on their phone and send their generated code to you privately.</p>
             <a id="join-url" class="join-url"></a>
             <p class="smallprint">No live connection: paste the codes below to collect the words.</p>
-            <div class="signal-art compact" aria-hidden="true"><img class="heart" src="./heart.svg" alt="" width="420" height="360"><span>Nothing to prove / Something to say</span></div>
+            <div class="signal-art compact" aria-hidden="true"><img class="heart" src="./heart.svg" alt="" width="420" height="360"></div>
           </div>
           <div class="form-panel">
-            <p class="section-label">Incoming transmissions</p>
+            <p class="section-label">Submission codes</p>
             <form id="import-form">
               <label>Submission codes<textarea id="import-codes" rows="5" required spellcheck="false" placeholder="Paste one or more FW1 codes here, separated by a space or a new line"></textarea></label>
               <button type="submit" class="button primary">Import codes ↙</button>
             </form>
             <p id="import-status" role="status" class="smallprint"></p>
-            <div class="line-heading"><h2>Who’s in?</h2><span id="participant-count">0 people / 0 words</span></div>
+            <div class="line-heading"><h2>Participants</h2><span id="participant-count">0 people / 0 words</span></div>
             <ul id="participants" class="participants"></ul>
             <p class="smallprint">Names only until the reveal. Remove an entry to discard it. Codes imported again update that person, even if someone else has the same name.</p>
             <div class="actions">
@@ -83,7 +82,7 @@
       </div>
 
       <div id="reveal" class="reveal" hidden>
-        <div class="eyebrow"><span id="progress"></span><span>03 / Who said it?</span></div>
+        <div class="eyebrow"><span id="progress"></span><span>03 / Reveal</span></div>
         <div class="word-stage">
           <p id="word" class="big-word"></p>
           <p id="author" class="author" aria-live="polite"></p>
@@ -97,8 +96,8 @@
       </div>
 
       <div id="end" hidden>
-        <div class="eyebrow"><span>04 / After the noise</span><span>That was your sprint.</span></div>
-        <h1>All out.<br><em>Talk it through.</em></h1>
+        <div class="eyebrow"><span>04 / Summary</span></div>
+        <h1>Retro <em>summary.</em></h1>
         <div id="summary" class="summary"></div>
         <div class="actions">
           <button id="replay" class="button primary">Replay the words ↺</button>
@@ -107,7 +106,7 @@
       </div>
     </section>
   </main>
-  <footer><span>Five words / A sprint retrospective</span><span>Less status. More feeling.</span></footer>
+  <footer><span>Five Words / Sprint retrospective</span></footer>
   <noscript><p class="error">Please enable JavaScript to generate and import submission codes.</p></noscript>
   <script type="module" src="./app.js"></script>
 </body>

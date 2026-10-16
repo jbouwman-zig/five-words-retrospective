@@ -92,7 +92,7 @@ function renderHost() {
     });
     if (!entries.length) {
       const empty = document.createElement('li');
-      empty.textContent = 'Quiet for now. Import the first code.';
+      empty.textContent = 'No submissions yet.';
       entries.push(empty);
     }
     $('participants').replaceChildren(...entries);
@@ -100,7 +100,7 @@ function renderHost() {
     const card = session.cards[session.index];
     $('word').textContent = card.word;
     $('progress').textContent = `${String(session.index + 1).padStart(2, '0')} / ${session.cards.length} words`;
-    $('author').textContent = session.revealed ? card.name : 'A familiar mind. An unfamiliar word.';
+    $('author').textContent = session.revealed ? card.name : 'Name hidden';
     $('author').classList.toggle('revealed', session.revealed);
     $('toggle-author').textContent = session.revealed ? 'Hide name' : 'Who said it?';
     $('previous').disabled = session.index === 0;
@@ -162,7 +162,6 @@ async function fullscreen() {
 
 async function initialize() {
   $('participant-link').setAttribute('aria-current', host ? 'false' : 'page');
-  $('host-link').setAttribute('aria-current', host ? 'page' : 'false');
   if (host) {
     session = load(HOST_KEY, validateSession) ?? emptySession();
     // Verify persistence before accepting any submissions.
@@ -209,7 +208,7 @@ async function initialize() {
     fitWord();
   } else {
     submission = load(ENTRY_KEY, validateSubmission);
-    const placeholders = ['electric', 'foggy', 'momentum', 'detour', 'together'];
+    const placeholders = ['busy', 'focused', 'progress', 'blocked', 'teamwork'];
     for (let index = 0; index < WORD_COUNT; index++) {
       const label = document.createElement('label');
       label.textContent = `Word ${String(index + 1).padStart(2, '0')}`;

@@ -47,7 +47,6 @@ button, a, input, textarea { -webkit-tap-highlight-color: transparent; }
   background: #f6d3df55;
 }
 .wordmark { font-family: var(--display); font-size: 2.2rem; text-decoration: none; line-height: 1; }
-.wordmark span { font: .7rem Arial, sans-serif; vertical-align: top; margin-left: .3rem; }
 nav { display: flex; gap: 1.5rem; font-size: .8rem; }
 nav a { text-decoration: none; }
 nav a[aria-current="page"] { color: var(--green); text-decoration: underline; text-underline-offset: .3rem; font-weight: 700; }
@@ -104,7 +103,6 @@ textarea { resize: vertical; }
   display: block; width: min(80%, 330px); height: auto;
   margin: .5rem 0 1rem;
 }
-.signal-art span { position: absolute; z-index: 3; left: 1rem; bottom: .8rem; color: #49374e; text-transform: uppercase; font-size: .6rem; letter-spacing: .2em; }
 .compact { min-height: 200px; }
 .compact .heart { width: min(70%, 240px); }
 .join-url { display: block; color: var(--green); font-size: clamp(1.05rem, 2vw, 1.6rem); overflow-wrap: anywhere; text-underline-offset: .25rem; }
@@ -144,7 +142,6 @@ footer { padding: 1rem 4vw; display: flex; justify-content: space-between; gap: 
   .compact { min-height: 210px; }
   .word-stage { min-height: 45vh; }
   .keyboard-hint { font-size: .65rem; }
-  footer span:last-child { display: none; }
 }
 @media (prefers-reduced-motion: no-preference) {
   .button { transition: background-color .15s, color .15s; }

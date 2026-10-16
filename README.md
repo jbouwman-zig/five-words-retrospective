@@ -20,7 +20,9 @@ needed. If you use a branch other than `main`, change the workflow branch filter
 
 ## Run a retro
 
-1. On the presentation laptop, choose **Host a retro** (`?view=host`).
+1. On the presentation laptop, open the site with `?view=host` appended to its
+   address, for example `https://YOUR-USERNAME.github.io/YOUR-REPOSITORY/?view=host`.
+   The participant page deliberately has no link to the host screen.
 2. Share the participant address shown on that page.
 3. Each participant enters their name and five words, then chooses
    **Generate my code** and **Copy code**.
@@ -78,6 +80,8 @@ There are no packages to install.
   cross-tab synchronization, authentication, or protection from someone using
   the same browser profile. Codes are not tied to a room: import only codes for
   the current retro.
+- Removing the host link is not access control. Anyone who knows `?view=host`
+  can open their own host screen, but cannot see your browser-local session.
 - The host can inspect imported data in browser developer tools. The hidden
   words are a game mechanic, not a security boundary.
 - Names are limited to 32 characters; each of the five word fields is limited

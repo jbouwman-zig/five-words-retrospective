@@ -1,5 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
+import { readFile } from 'node:fs/promises';
 import {
   validateSubmission, encodeSubmission, decodeSubmission, importSubmissions,
   shuffleCards, emptySession, validateSession,
@@ -7,6 +8,14 @@ import {
 
 const person = (id = 'person-001', name = 'Alex') => ({
   id, name, words: ['electric', 'foggy', 'momentum', 'detour', 'together'],
+});
+
+test('participant page has no host navigation or promotional slogans', async () => {
+  const html = await readFile(new URL('./index.html', import.meta.url), 'utf8');
+  assert.doesNotMatch(html, /href=["'][^"']*[?&]view=host|id=["']host-link/);
+  assert.doesNotMatch(html, /One sprint\. No filter|Make some noise|Transmission|Less status\. More feeling/i);
+  const app = await readFile(new URL('./app.js', import.meta.url), 'utf8');
+  assert.doesNotMatch(app, /host-link/);
 });
 
 test('submission codes round-trip Unicode, punctuation and HTML as plain text', () => {
